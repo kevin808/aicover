@@ -3,7 +3,7 @@ import { respData, respErr } from "@/lib/resp";
 import { Cover } from "@/types/cover";
 import { ImageGenerateParams } from "openai/resources/images.mjs";
 import { currentUser } from "@clerk/nextjs";
-import { downloadAndUploadImage } from "@/lib/s3";
+import { downloadAndUploadImage } from "@/services/minio";
 import { genUuid } from "@/lib";
 import { getOpenAIClient } from "@/services/openai";
 import { getUserCredits } from "@/services/order";
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     const img_name = encodeURIComponent(description);
     const s3_img = await downloadAndUploadImage(
       raw_img_url,
-      process.env.AWS_BUCKET || "trysai",
+      process.env.MINIO_BUCKET || "aicover",
       `covers/${img_name}.png`
     );
     const img_url = s3_img.Location;

@@ -27,11 +27,11 @@ export async function handleOrderSession(session_id: string) {
 
 export async function getUserCredits(user_email: string): Promise<UserCredits> {
   let user_credits: UserCredits = {
-    one_time_credits: 1,
-    monthly_credits: 0,
-    total_credits: 1,
+    one_time_credits: 10,
+    monthly_credits: 10,
+    total_credits: 10,
     used_credits: 0,
-    left_credits: 1,
+    left_credits: 10,
   };
 
   try {
