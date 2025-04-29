@@ -37,13 +37,16 @@ put `.env.local` under `aicover` root dir with values list below
 
 ```
 OPENAI_API_KEY=""
+OPENAI_BASE_URL=""
 
 POSTGRES_URL=""
 
-AWS_AK=""
-AWS_SK=""
-AWS_REGION=""
-AWS_BUCKET=""
+MINIO_ENDPOINT="localhost" 
+MINIO_PORT="9000"
+MINIO_USE_SSL="false"
+MINIO_ACCESS_KEY="xxx"
+MINIO_SECRET_KEY="xxx"
+MINIO_BUCKET="aicover"
 
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
